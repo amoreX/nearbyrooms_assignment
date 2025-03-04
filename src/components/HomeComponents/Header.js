@@ -15,9 +15,9 @@ export default function Header() {
   }, [active]);
 
   return (
-    <header className="bg-white border-b sticky top-0 z-10">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between ">
-        <h1 className={`text-2xl font-bold  transition-transform duration-300 ${active ? 'transform scale-50 md:scale-100' : ''}`}>
+    <header className="bg-white border-b sticky top-0 z-10 h-16">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between h-full">
+        <h1 className={`text-2xl font-bold  transition-transform duration-300 ${active ? 'transform scale-75 md:scale-100' : ''}`}>
           Nearby Rooms
         </h1>
         <div className="flex items-center gap-4 ml-auto">
