@@ -22,7 +22,7 @@ export default function FeaturedRooms({
     <motion.div className="hidden md:block w-2/3"
     initial={{opacity:0,x:150}}
     animate={{opacity:1,x:0}}
-    transition={{type:"tween",ease:"easeInOut",duration:0.5,delay:0.4}}
+    transition={{type:"tween",ease:"easeInOut",duration:0.4,delay:0.2}}
     >
       <Card className="p-6 h-full">
         <div className="flex flex-col h-full">
