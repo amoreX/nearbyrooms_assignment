@@ -2,17 +2,28 @@ import React from "react";
 import { Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 export default function Header() {
+  const [active,isActive]=useState(false);
   return (
+
     <header className="bg-white border-b sticky top-0 z-10"
 
     >
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <h1 className="text-2xl font-bold">Nearby Rooms</h1>
         <div className="flex items-center gap-4">
-          <Input type="text" className=" text-black  focus:border-black" placeholder="Search.." />
-          <Button variant="ghost" size="icon" className="rounded-full">
+          <AnimatePresence
+          >
+            {active && <motion.input 
+            initial={{width:0,opacity:0}}
+            animate={{width:150,opacity:1}}
+            transition={{type:"tween",ease:"easeInOut",duration:0.4}}
+            exit={{width:0,opacity:0}}
+            type="text" className=" text-black border-black border-1  rounded-md  focus:border-black px-2 py-0.5 w-40 " placeholder="Search.." />}  
+          </AnimatePresence>
+          <Button variant="ghost" size="icon" className=" rounded-full scale-150 cursor-pointer" onClick={()=>isActive(!active)}>
             <Search className="h-5 w-5" />
           </Button>
         </div>
