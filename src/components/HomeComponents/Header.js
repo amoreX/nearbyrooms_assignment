@@ -16,9 +16,9 @@ export default function Header() {
 
   return (
     <header className="bg-white border-b sticky top-0 z-10">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold">Nearby Rooms</h1>
-        <div className="flex items-center gap-4">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between relative">
+        <h1 className="text-2xl font-bold absolute left-4">Nearby Rooms</h1>
+        <div className="flex items-center gap-4 ml-auto">
           <AnimatePresence>
             {active && (
               <motion.input
