@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { motion } from "framer-motion";
 
 export default function LocationSelection() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -35,16 +37,28 @@ export default function LocationSelection() {
             Let's find you the perfect space! Select a location to discover
             rooms within your preferred radius.
           </p>
-          
+
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <Button
-                className="bg-accentBlue hover:bg-accentHoverBlue transition-all duration-300 ease-in-out"
-                onClick={() => setIsDialogOpen(true)}
+              <motion.div
+                className="flex items-center gap-2"
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{
+                  type: "tween",
+                  ease: "easeOut",
+                  duration: 0.38,
+                  delay: 0.4,
+                }}
               >
-                <MapPin className="h-5 w-5" />
-                Choose Location
-              </Button>
+                <Button
+                  className="bg-accentBlue hover:bg-accentHoverBlue transition-all duration-300 ease-in-out"
+                  onClick={() => setIsDialogOpen(true)}
+                >
+                  <MapPin className="h-5 w-5" />
+                  Choose Location
+                </Button>
+              </motion.div>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>

@@ -11,7 +11,7 @@ export const metadata = {
   description: "Assignment for Internship",
 };
 
-import Navbar from "./Components/Navbar/navbar";
+import Navbar from "./Routes/Navbar/navbar";
 
 export default function RootLayout({ children }) {
   return (

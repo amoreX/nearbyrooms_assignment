@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-
+import { motion } from "framer-motion";
 export default function FeaturedRooms({
   selectedFilters,
   toggleFilter,
@@ -19,7 +19,11 @@ export default function FeaturedRooms({
   }
 
   return (
-    <div className="hidden md:block w-2/3">
+    <motion.div className="hidden md:block w-2/3"
+    initial={{opacity:0,x:400}}
+    animate={{opacity:1,x:0}}
+    transition={{type:"tween",ease:"easeOut",duration:0.38,delay:0.4}}
+    >
       <Card className="p-6 h-full">
         <div className="flex flex-col h-full">
           {/* Quick Filters */}
@@ -56,7 +60,7 @@ export default function FeaturedRooms({
           <div className="flex-1">
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-lg font-semibold">Featured Rooms</h3>
-              <Button variant="ghost" size="sm" className="text-blue-500">
+              <Button variant="ghost" size="sm" className="text-accentBlue">
                 View All
               </Button>
             </div>
@@ -65,7 +69,7 @@ export default function FeaturedRooms({
               {/* Empty state for featured rooms */}
               <div className="col-span-full flex flex-col items-center justify-center text-center p-8 bg-gray-100 rounded-lg">
                 <div className="bg-blue-100 rounded-full p-4 mb-4">
-                  <MapPin className="h-6 w-6 text-blue-500" />
+                  <MapPin className="h-6 w-6 text-accentBlue" />
                 </div>
                 <h4 className="text-lg font-medium text-gray-800">
                   No Featured Rooms
@@ -98,6 +102,6 @@ export default function FeaturedRooms({
           </div>
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 }
