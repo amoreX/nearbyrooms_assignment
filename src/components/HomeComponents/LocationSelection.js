@@ -24,7 +24,11 @@ export default function LocationSelection() {
   };
 
   return (
-    <div className="w-full md:w-1/3">
+    <motion.div className="w-full md:w-1/3"
+    initial={{scale:0}}
+    animate={{scale:1}}
+    transition={{type:"tween",ease:"easeOut",duration:0.38,delay:0.1}}
+    >
       <Card className="p-6 h-full flex flex-col gap-4">
         <div className="mt-4 flex-1 flex flex-col items-center justify-center text-center gap-2">
           <div className="bg-accentBlue rounded-full p-6 inline-flex mb-4">
@@ -98,6 +102,6 @@ export default function LocationSelection() {
           </span>
         </div>
       </Card>
-    </div>
+    </motion.div>
   );
 }
