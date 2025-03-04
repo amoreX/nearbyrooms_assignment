@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { motion } from "framer-motion";
 
 export default function LocationSelection() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -24,11 +23,7 @@ export default function LocationSelection() {
   };
 
   return (
-    <motion.div className="w-full md:w-1/3"
-    initial={{scale:0}}
-    animate={{scale:1}}
-    transition={{type:"tween",ease:"easeOut",duration:0.38,delay:0.1}}
-    >
+    <div className="w-full md:w-1/3">
       <Card className="p-6 h-full flex flex-col gap-4">
         <div className="mt-4 flex-1 flex flex-col items-center justify-center text-center gap-2">
           <div className="bg-accentBlue rounded-full p-6 inline-flex mb-4">
@@ -44,17 +39,7 @@ export default function LocationSelection() {
 
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <motion.div
-                className="flex items-center gap-2"
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{
-                  type: "tween",
-                  ease: "easeOut",
-                  duration: 0.38,
-                  delay: 0.4,
-                }}
-              >
+              <div className="flex items-center gap-2">
                 <Button
                   className="bg-accentBlue hover:bg-accentHoverBlue transition-all duration-300 ease-in-out"
                   onClick={() => setIsDialogOpen(true)}
@@ -62,7 +47,7 @@ export default function LocationSelection() {
                   <MapPin className="h-5 w-5" />
                   Choose Location
                 </Button>
-              </motion.div>
+              </div>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
@@ -102,6 +87,6 @@ export default function LocationSelection() {
           </span>
         </div>
       </Card>
-    </motion.div>
+    </div>
   );
 }
