@@ -20,7 +20,7 @@ export default function ProfileHeader({ name }) {
 	}, [name]);
 
 	return (
-		<div className="bg-gradient-to-b from-blue-500 to-blue-600 text-white flex justify-center items-center p-10">
+		<div className="bg-gradient-to-b from-blue-500 to-blue-600 text-white flex justify-center items-center p-6">
 			<div className="flex flex-col items-center md:flex-row md:items-end md:space-x-6">
 				<div className="relative mb-4 md:mb-0 ">
 					<Avatar className="w-24 h-24 md:w-32 md:h-32 border-4 border-white">
