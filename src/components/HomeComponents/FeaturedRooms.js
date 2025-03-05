@@ -3,16 +3,16 @@ import { MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-export default function FeaturedRooms({ selectedFilters, toggleFilter, isFilterSelected }) {
-	const [isClient, setIsClient] = useState(false);
+export default function FeaturedRooms() {
+	const [selectedFilters, setSelectedFilters] = useState([]);
 
-	useEffect(() => {
-		setIsClient(true);
-	}, []);
+	const toggleFilter = (filter) => {
+		setSelectedFilters((prev) =>
+			prev.includes(filter) ? prev.filter((f) => f !== filter) : [...prev, filter]
+		);
+	};
 
-	if (!isClient) {
-		return null;
-	}
+	const isFilterSelected = (filter) => selectedFilters.includes(filter);
 
 	return (
 		<motion.div
