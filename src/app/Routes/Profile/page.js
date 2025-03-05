@@ -15,7 +15,7 @@ export default function ProfilePage() {
 		<ProfileContext.Provider value={{ name, setName }}>
 			<div className="min-h-screen flex flex-col bg-gray-50 ">
 				<ProfileHeader name={name} />
-				<main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6">
+				<main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6 pb-20">
 					<div className="grid gap-6 md:grid-cols-3">
 						<div className="md:col-span-2 space-y-6">
 							<ProfileInfoCard />
