@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import {
 	Select,
 	SelectContent,
@@ -20,31 +20,36 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { ProfileContext } from "@/app/Routes/Profile/page";
 
 export default function ProfileInfoCard() {
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [relationship, setRelationship] = useState("Not specified");
-	const handleDialogClose = () => {
-		setIsDialogOpen(false);
-	};
-
+	const { setName } = useContext(ProfileContext);
 	const [userDetails, setUserDetails] = useState({
 		worksAt: "Not specified",
 		livesIn: "Not specified",
 		country: "Not specified",
 	});
 
+	const handleDialogClose = () => {
+		setIsDialogOpen(false);
+	};
+
 	const handleDialogSubmit = () => {
+		const name = document.getElementById("Name").value;
 		const workAt = document.getElementById("WorkAt").value;
 		const livesIn = document.getElementById("LivesIn").value;
 		const country = document.getElementById("Country").value;
 
-		if (workAt && livesIn && country) {
-			setUserDetails({
-				worksAt: workAt || "Not specified",
-				livesIn: livesIn || "Not specified",
-				country: country || "Not specified",
-			});
+		setUserDetails((prevDetails) => ({
+			worksAt: workAt || prevDetails.worksAt,
+			livesIn: livesIn || prevDetails.livesIn,
+			country: country || prevDetails.country,
+		}));
+
+		if (name) {
+			setName(name);
 		}
 
 		handleDialogClose();
@@ -103,6 +108,17 @@ export default function ProfileInfoCard() {
 						<DialogTitle>Edit your profile</DialogTitle>
 					</DialogHeader>
 					<div className="grid gap-4 py-4">
+						<div className="grid grid-cols-4 items-center gap-4">
+							<Label htmlFor="Name" className="text-right">
+								Name
+							</Label>
+							<Input
+								id="Name"
+								type="text"
+								placeholder="e.g. John Doe"
+								className="col-span-3 outline-none border border-black rounded-md p-2 hover:outline-none focus:outline-none"
+							/>
+						</div>
 						<div className="grid grid-cols-4 items-center gap-4">
 							<Label htmlFor="WorkAt" className="text-right">
 								Works at

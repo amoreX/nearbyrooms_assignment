@@ -1,9 +1,23 @@
+"use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, LogOut } from "lucide-react";
+import { useState, useEffect } from "react";
 
-export default function ProfileHeader() {
+export default function ProfileHeader({ name }) {
+	const [profileName, setProfileName] = useState(name);
+	const [avatar, setAvatar] = useState("");
+	useEffect(() => {
+		setProfileName(name);
+		const avatar = name
+			.split(" ")
+			.map((n) => n[0])
+			.join("")
+			.toUpperCase();
+		setAvatar(avatar);
+	}, [name]);
+
 	return (
 		<div className="bg-gradient-to-b from-blue-500 to-blue-600 text-white">
 			<div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
@@ -11,12 +25,12 @@ export default function ProfileHeader() {
 					<div className="relative mb-4 md:mb-0">
 						<Avatar className="w-24 h-24 md:w-32 md:h-32 border-4 border-white">
 							<AvatarImage src="/placeholder.svg" />
-							<AvatarFallback className="text-accentBlue scale-200">NR</AvatarFallback>
+							<AvatarFallback className="text-accentBlue scale-200">{avatar}</AvatarFallback>
 						</Avatar>
 						<CheckCircle2 className="absolute bottom-0 right-0 w-6 h-6 text-blue-500 bg-white rounded-full" />
 					</div>
 					<div className="text-center md:text-left flex-1">
-						<h1 className="text-2xl md:text-3xl font-bold mb-2">Nihal Rahman</h1>
+						<h1 className="text-2xl md:text-3xl font-bold mb-2">{name}</h1>
 						<div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
 							<Badge variant="secondary" className="bg-white/20 hover:bg-white/30">
 								🏠 Room enthusiast
