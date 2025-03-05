@@ -26,6 +26,7 @@ export default function ProfileInfoCard() {
 	const [isDialogOpen, setIsDialogOpen] = useState(false);
 	const [relationship, setRelationship] = useState("Not specified");
 	const { setName } = useContext(ProfileContext);
+	
 	const [userDetails, setUserDetails] = useState({
 		worksAt: "Not specified",
 		livesIn: "Not specified",

@@ -13,7 +13,7 @@ export default function ProfilePage() {
 
 	return (
 		<ProfileContext.Provider value={{ name, setName }}>
-			<div className="min-h-screen flex flex-col bg-gray-50 ">
+			<div className="min-h-screen flex flex-col bg-gray-50  ">
 				<ProfileHeader name={name} />
 				<main className="flex-1 max-w-4xl mx-auto w-full px-4 py-6 pb-20">
 					<div className="grid gap-6 md:grid-cols-3">

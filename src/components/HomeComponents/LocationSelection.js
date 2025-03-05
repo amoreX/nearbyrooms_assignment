@@ -24,7 +24,7 @@ export default function LocationSelection() {
 
   return (
     <div className="w-full md:w-1/3">
-      <Card className="p-6 h-full flex flex-col gap-4">
+      <Card className="p-6 h-full flex flex-col gap-4 ">
         <div className="mt-4 flex-1 flex flex-col items-center justify-center text-center gap-2">
           <div className="bg-blue-500 rounded-full p-6 inline-flex mb-4">
             <MapPin className="h-8 w-8 text-white" />
