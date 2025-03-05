@@ -190,7 +190,7 @@ export default function ProfileInfoCard() {
 
 				<Button
 					variant="secondary"
-					className="bg-blue-500 text-white   hover:bg-blue-600 transition-all duration-300 ease-in-out cursor-pointer"
+					className="bg-blue-500 text-white hidden md:flex  hover:bg-blue-600 transition-all duration-300 ease-in-out cursor-pointer"
 				>
 					<LogOut className="w-4 h-4 " />
 					Logout

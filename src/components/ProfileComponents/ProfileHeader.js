@@ -40,15 +40,15 @@ export default function ProfileHeader({ name }) {
 						</Badge>
 					</div>
 				</div>
-				<div className=" md:flex items-center gap-2">
-					{/* <Button
+				<div className=" md:hidden flex items-center gap-2">
+					<Button
 						variant="secondary"
 						size="sm"
-						className="bg-white/20 text-white hover:bg-white/30 cursor-pointer"
+						className="bg-white/20 text-white  hover:bg-white/30 cursor-pointer"
 					>
 						<LogOut className="w-4 h-4 " />
 						Logout
-					</Button> */}
+					</Button>
 				</div>
 			</div>
 		</div>
