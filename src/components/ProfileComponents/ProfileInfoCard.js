@@ -95,7 +95,7 @@ export default function ProfileInfoCard() {
 				<DialogTrigger asChild>
 					<div className="flex items-center justify-center gap-2">
 						<Button
-							className="bg-accentBlue hover:bg-accentHoverBlue transition-all duration-300 ease-in-out"
+							className="bg-blue-500 hover:bg-blue-600 transition-all duration-300 ease-in-out"
 							onClick={() => setIsDialogOpen(true)}
 						>
 							<PenSquare className="w-4 h-4 mr-2" />

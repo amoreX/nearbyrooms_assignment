@@ -26,7 +26,7 @@ export default function LocationSelection() {
     <div className="w-full md:w-1/3">
       <Card className="p-6 h-full flex flex-col gap-4">
         <div className="mt-4 flex-1 flex flex-col items-center justify-center text-center gap-2">
-          <div className="bg-accentBlue rounded-full p-6 inline-flex mb-4">
+          <div className="bg-blue-500 rounded-full p-6 inline-flex mb-4">
             <MapPin className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-2xl font-semibold text-gray-800">
@@ -41,7 +41,7 @@ export default function LocationSelection() {
             <DialogTrigger asChild>
               <div className="flex items-center gap-2">
                 <Button
-                  className="bg-accentBlue hover:bg-accentHoverBlue transition-all duration-300 ease-in-out"
+                  className="bg-blue-500 hover:bg-blue-600 transition-all duration-300 ease-in-out"
                   onClick={() => setIsDialogOpen(true)}
                 >
                   <MapPin className="h-5 w-5" />

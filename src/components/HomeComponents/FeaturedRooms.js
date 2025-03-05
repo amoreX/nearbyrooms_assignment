@@ -45,7 +45,7 @@ export default function FeaturedRooms({
                   variant={isFilterSelected(filter) ? "solid" : "outline"}
                   size="sm"
                   className={`rounded-full ${
-                    isFilterSelected(filter) ? "bg-accentBlue text-white" : ""
+                    isFilterSelected(filter) ? "bg-blue-600 text-white" : ""
                   }`}
                   onClick={() => toggleFilter(filter)}
                 >
@@ -69,7 +69,7 @@ export default function FeaturedRooms({
               {/* Empty state for featured rooms */}
               <div className="col-span-full flex flex-col items-center justify-center text-center p-8 bg-gray-100 rounded-lg">
                 <div className="bg-blue-100 rounded-full p-4 mb-4">
-                  <MapPin className="h-6 w-6 text-accentBlue" />
+                  <MapPin className="h-6 w-6 text-blue-500" />
                 </div>
                 <h4 className="text-lg font-medium text-gray-800">
                   No Featured Rooms
