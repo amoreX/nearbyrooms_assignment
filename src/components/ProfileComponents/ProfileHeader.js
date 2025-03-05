@@ -11,7 +11,7 @@ export default function ProfileHeader() {
 					<div className="relative mb-4 md:mb-0">
 						<Avatar className="w-24 h-24 md:w-32 md:h-32 border-4 border-white">
 							<AvatarImage src="/placeholder.svg" />
-							<AvatarFallback>NR</AvatarFallback>
+							<AvatarFallback className="text-accentBlue scale-200">NR</AvatarFallback>
 						</Avatar>
 						<CheckCircle2 className="absolute bottom-0 right-0 w-6 h-6 text-blue-500 bg-white rounded-full" />
 					</div>
