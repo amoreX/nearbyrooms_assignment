@@ -1,6 +1,5 @@
 "use client";
 import { createContext, useState } from "react";
-import { Button } from "@/components/ui/button";
 import ProfileHeader from "@/components/ProfileComponents/ProfileHeader";
 import ProfileInfoCard from "@/components/ProfileComponents/ProfileInfoCard";
 import ProfileListings from "@/components/ProfileComponents/ProfileListings";

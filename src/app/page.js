@@ -1,5 +1,6 @@
-"use client";
-import React, { useState, useEffect } from "react";
+
+
+import React from "react";
 import Header from "@/components/HomeComponents/Header";
 import LocationSelection from "@/components/HomeComponents/LocationSelection";
 import FeaturedRooms from "@/components/HomeComponents/FeaturedRooms";

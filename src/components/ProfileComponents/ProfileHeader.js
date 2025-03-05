@@ -32,23 +32,23 @@ export default function ProfileHeader({ name }) {
 				<div className="text-center md:text-left flex-1">
 					<h1 className="text-2xl md:text-3xl font-bold mb-2">{name}</h1>
 					<div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-						<Badge variant="secondary" className="bg-white/20 hover:bg-white/30">
+						<Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">
 							🏠 Room enthusiast
 						</Badge>
-						<Badge variant="secondary" className="bg-white/20 hover:bg-white/30">
+						<Badge variant="secondary" className="bg-white/20 text-white hover:bg-white/30">
 							🌆 City explorer
 						</Badge>
 					</div>
 				</div>
 				<div className=" md:flex items-center gap-2">
-					<Button
+					{/* <Button
 						variant="secondary"
 						size="sm"
-						className="bg-white/20 hover:bg-white/30 cursor-pointer"
+						className="bg-white/20 text-white hover:bg-white/30 cursor-pointer"
 					>
 						<LogOut className="w-4 h-4 " />
 						Logout
-					</Button>
+					</Button> */}
 				</div>
 			</div>
 		</div>
